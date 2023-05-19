@@ -10,3 +10,30 @@ export interface AuthResponse extends ErrorAuthResponse{
     refresh_token:string,
     token_type:string
 }
+
+export interface Curriculum{
+    id:string,
+    code:string,
+    name:string,
+    principal:boolean,
+    completed:boolean,
+    incompleteSteps:Array<any>
+}
+
+export interface CurriculumSkills{
+    expertise: Skill[],
+    language: Language[]
+}
+
+export interface Skill{
+    skill:string,
+    level:"alto" | "medio" | "bajo"
+}
+
+export interface Language{
+    id:number,
+    writing:string,
+    comments:string,
+    reading:string,
+    speaking:string
+}
