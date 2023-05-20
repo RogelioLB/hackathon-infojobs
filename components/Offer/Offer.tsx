@@ -19,7 +19,7 @@ export default function Offer(props:Offer){
 
     const getScore = async () =>{
         setLoading(true)
-        const res = await fetch(`http://localhost:3000/api/evaluate`,{
+        const res = await fetch(`https://hackathon-infojobs.vercel.app/api/evaluate`,{
             body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills}),
             method:'POST',
             headers:{
