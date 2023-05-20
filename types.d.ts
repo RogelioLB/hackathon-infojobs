@@ -37,3 +37,33 @@ export interface Language{
     reading:string,
     speaking:string
 }
+
+export interface OfferResponse{
+    offers: Offer[],
+    totalResults: number,
+    currentResults: number,
+    totalPages: number,
+    currentPage: number
+}
+
+export interface Offer{
+    id:string,
+    title:string,
+    description:string,
+    link:string,
+    author: Profile,
+    requirementMin:string
+}
+
+export interface Profile{
+    id:string,
+    name:string,
+    logoUrl:string
+}
+
+export interface CurriculumContextValues{
+    curriculum:Curriculum,
+    getCurriculum?:(token: string) => Promise<void>,
+    skills?:CurriculumSkills,
+    getSkills?:(curriculum: Curriculum, token: string) => Promise<void>
+}

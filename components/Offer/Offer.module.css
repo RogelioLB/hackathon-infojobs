@@ -1,0 +1,109 @@
+.group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.offer{
+    background-color: #EEE8E8;
+    width: 100%;
+    display:flex;
+    border-radius: 8px;
+    padding:14px;
+    gap:10px;
+    box-shadow: 0 4px 5px rgba(0,0,0,.2);
+}
+
+.offer button{
+    padding:10px 15px;
+    background-color: #167DB7;
+    border-radius:8px;
+    text-decoration: none;
+    color:#fff;
+    display:flex;
+    gap:10px;
+    align-items: center;
+    font-weight:500;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border:none;
+}
+
+.offer button:disabled{
+    background-color: #0e547c;
+    cursor: not-allowed;
+}
+
+.offer_left{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.offer_right{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.offer_right h3{
+    font-size: clamp(1.125rem, 0.5641rem + 1.7949vw, 2rem);
+}
+
+.offer_right p{
+    font-size: 14px;
+}
+
+.offer_square{
+    position: relative;
+    width:100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer_score{
+    color:#fff;
+}
+
+.offer_score_green{
+    background-color: #04DA00;
+}
+
+.offer_score_yellow{
+    background-color: #D5DA00;
+}
+
+.offer_score_red{
+    background-color: #DA0D00;
+}
+
+.offer_square img{
+    object-fit: cover;
+    width: 100%;
+}
+
+@media screen and (max-width:578px) {
+    .offer{
+        flex-direction: column;
+    }
+
+    .offer_left{
+        flex-direction: row;
+    }
+}
+
+.recomendation{
+    width:80%;
+    padding: 12px;
+    color:#fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

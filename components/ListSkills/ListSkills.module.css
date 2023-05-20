@@ -1,0 +1,10 @@
+.list_skills{
+    margin: 20px 0;
+}
+
+.list_skills ul{
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+    margin-top:8px;
+}

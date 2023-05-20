@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import CurriculumContext from '../../context/curriculumContext'
 import Logo from '../../components/Logo/Logo'
+import OffersContext from '../../context/offersContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,9 @@ export default function RootLayout({
           <Logo />
         </nav>
         <CurriculumContext>
-          {children}
+          <OffersContext>
+            {children}
+          </OffersContext>
         </CurriculumContext>
       </body>
     </html>
