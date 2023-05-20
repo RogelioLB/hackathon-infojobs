@@ -23,7 +23,7 @@ const CurriculumContext = ({children}:{children:ReactNode}) =>{
     const [skills,setSkills] = useState<CurriculumSkills>()
 
     const getCurriculum = useCallback(async (token:string) =>{
-        const res = await fetch(`http://localhost:3000/api/curriculum`,{
+        const res = await fetch(`https://hackathon-infojobs.vercel.app/api/curriculum`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
