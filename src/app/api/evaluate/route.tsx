@@ -14,6 +14,7 @@ const defaultMessage = {role:ChatCompletionRequestMessageRoleEnum.System,content
 }
 
 tienes que cambiar lo que hay entre corchetes por el valor. el maximo de caracteres permitidos en 'message' sera de 300 por lo que se simple y conciso.
+Tambien ten en cuenta que un nivel alto significa que tiene conocimientos avanzados del tema, un nivel medio tiene conocimientos del tema, y un nivel bajo apenas tiene conocimientos del tema.
 
 Por ejemplo: 
 
