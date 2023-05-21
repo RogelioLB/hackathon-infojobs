@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import useSkills from "../../hooks/useSkills";
 import { CurriculumSkills, Offer } from "../../types";
@@ -56,6 +57,7 @@ export default function Offer(props:Offer){
                 && 
                 <div className={`${styles.recomendation} ${evaluation.score >= 8 ? styles.offer_score_green : evaluation.score >= 6 ? styles.offer_score_yellow : styles.offer_score_red}`}>
                     <p>{evaluation.message}</p>
+                    <Link href={props.link} target="_blank">Ver oferta</Link>
                 </div>
             }
         </div>

@@ -19,6 +19,7 @@
     padding:10px 15px;
     background-color: #167DB7;
     border-radius:8px;
+    font-size:16px;
     text-decoration: none;
     color:#fff;
     display:flex;
@@ -71,6 +72,8 @@
 
 .offer_score{
     color:#fff;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .offer_score_green{
@@ -106,4 +109,12 @@
     color:#fff;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.recomendation a{
+    color:white;
+    display: block;
+    text-align: center;
+    margin:10px;
+    font-weight: 900;
 }
