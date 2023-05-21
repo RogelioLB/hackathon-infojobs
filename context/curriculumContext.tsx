@@ -23,7 +23,7 @@ const CurriculumContext = ({children}:{children:ReactNode}) =>{
     const [skills,setSkills] = useState<CurriculumSkills>()
 
     const getCurriculum = useCallback(async (token:string) =>{
-        const res = await fetch(`https://hackathon-infojobs.vercel.app/api/curriculum`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/curriculum`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -33,7 +33,7 @@ const CurriculumContext = ({children}:{children:ReactNode}) =>{
     },[])
 
     const getSkills = useCallback(async (curriculum:Curriculum,token:string) =>{
-        const res = await fetch(`https://hackathon-infojobs.vercel.app/api/curriculum/${curriculum.code}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/curriculum/${curriculum.code}`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

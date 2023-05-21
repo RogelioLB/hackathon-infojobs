@@ -15,7 +15,7 @@ const defaultMessage = {role:ChatCompletionRequestMessageRoleEnum.System,content
 
 tienes que cambiar lo que hay entre corchetes por el valor. el maximo de caracteres permitidos en 'message' sera de 300 por lo que se simple y conciso.
 Tambien ten en cuenta que un nivel alto significa que tiene conocimientos avanzados del tema, un nivel medio tiene conocimientos del tema, y un nivel bajo apenas tiene conocimientos del tema. Por lo que basate en esos parametros para dar tu score. 
-Además no seas tan estricto y ten más en cuenta mis habilidades que los requerimientos.
+Además no seas tan estricto y ten más en cuenta mis habilidades que los requerimientos. No tengas en cuenta los años de experiencia que piden en la oferta.
 
 Por ejemplo: 
 

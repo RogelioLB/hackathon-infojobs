@@ -17,7 +17,7 @@ const OffersContext = ({children}:{children:ReactNode}) =>{
 
     const getOffers = async (query:string) =>{
         setLoading(true)
-        const res = await fetch(`https://hackathon-infojobs.vercel.app/api/offer?q=${query}`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/offer?q=${query}`)
         const data : OfferResponse = await res.json()
         setOffers(data.offers.filter(offer=>offer.requirementMin.length>0))
         setLoading(false)

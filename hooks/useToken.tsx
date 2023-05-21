@@ -10,7 +10,7 @@ export default function useToken(code?:string | null){
     useEffect(()=>{
         const getToken = async () =>{
             setLoading(true)
-            const res = await fetch(`https://hackathon-infojobs.vercel.app/api/auth?code=${code}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/auth?code=${code}`)
             const data : AuthResponse = await res.json()
             if(data.error) return router.replace("/")
             setToken(data.access_token)
