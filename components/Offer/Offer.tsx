@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { EvaluationError } from "../../errors";
 import useModal from "../../hooks/useModal";
 import useSkills from "../../hooks/useSkills";
 import { CurriculumSkills, Offer } from "../../types";
@@ -31,11 +32,13 @@ export default function Offer(props:Offer){
                     "Content-Type":"application/json"
                 }
             })
+            if(res.status===500) throw new EvaluationError(await res.text())
             const data : { score:number,message:string } = await res.json()
             setEvaluation(data)
             setLoading(false)
-        }catch{
-            showModal('Este proyecto usa la API gratuita de OpenAI. Asi que solo permite 3 peticiones por minuto. Deja pasar el tiempo.')
+        }catch(err){
+            if(err instanceof EvaluationError) showModal(err.message)
+            else showModal('A ocurrido un error.')
             setLoading(false)
         }
     }

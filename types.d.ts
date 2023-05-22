@@ -67,3 +67,15 @@ export interface CurriculumContextValues{
     skills?:CurriculumSkills,
     getSkills?:(curriculum: Curriculum, token: string) => Promise<void>
 }
+
+export interface ModalContextValues{ 
+    show: boolean,
+    showModal: (text:string) => void,
+    closeModal: () => void,textModal:string
+}
+
+export interface OffersContextValues{
+    offers:Offer[],
+    loading:boolean,
+    getOffers?: (query: string) => Promise<void>
+}

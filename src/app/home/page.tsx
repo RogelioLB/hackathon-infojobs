@@ -11,7 +11,6 @@ import useToken from "../../../hooks/useToken"
 export default function Home(){
     const searchParams = useSearchParams()
     const code = searchParams.get("code")
-
     const [token,loading] = useToken(code)
     useCurriculum(token as string)
 

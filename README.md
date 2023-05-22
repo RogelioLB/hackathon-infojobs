@@ -11,7 +11,7 @@ Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero int
 - [x] Integración con OpeanAI
 - [x] Evaluación de la oferta en base a conocimientos
 - [x] Manejo de errores
-- [ ] Tipar componentes
+- [x] Tipar componentes
 - [ ] Paginación
 - [ ] Mejorar UI
 
