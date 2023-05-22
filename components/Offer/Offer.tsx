@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import useModal from "../../hooks/useModal";
 import useSkills from "../../hooks/useSkills";
 import { CurriculumSkills, Offer } from "../../types";
 import styles from './Offer.module.css'
@@ -9,6 +10,8 @@ export default function Offer(props:Offer){
     const [evaluation,setEvaluation] = useState<{score:number,message:string}>()
     const [loading,setLoading] = useState(false)
     const skills = useSkills()
+    const {showModal} = useModal()
+
     const generateSkills = (skills:CurriculumSkills) => {
         const {expertise,language} = skills
         const exp = expertise.map((sk)=>{
@@ -20,16 +23,21 @@ export default function Offer(props:Offer){
 
     const getScore = async () =>{
         setLoading(true)
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/evaluate`,{
-            body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills}),
-            method:'POST',
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-        const data : { score:number,message:string } = await res.json()
-        setEvaluation(data)
-        setLoading(false)
+        try{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/evaluate`,{
+                body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills}),
+                method:'POST',
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+            const data : { score:number,message:string } = await res.json()
+            setEvaluation(data)
+            setLoading(false)
+        }catch{
+            showModal('Este proyecto usa la API gratuita de OpenAI. Asi que solo permite 3 peticiones por minuto. Deja pasar el tiempo.')
+            setLoading(false)
+        }
     }
 
     return(

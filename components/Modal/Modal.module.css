@@ -1,0 +1,32 @@
+.modal{
+    position:fixed;
+    left:50%;
+    top:100vh;
+    background-color: white;
+    border-radius: 8px;
+    padding:20px;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    transform:translate(-50%,0);
+    transition: transform .3s;
+}
+
+.modal_show{
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+.modal span{
+    font-size: 18px;
+}
+
+.modal button{
+    border:none;
+    padding:10px 20px;
+    color:#fff;
+    background-color: #167DB7;
+    cursor:pointer;
+    border-radius: 8px;
+    outline: none;
+}

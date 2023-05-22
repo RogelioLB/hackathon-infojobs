@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import CurriculumContext from '../../context/curriculumContext'
 import Logo from '../../components/Logo/Logo'
 import OffersContext from '../../context/offersContext'
+import ModalContext from '../../context/modalContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +23,13 @@ export default function RootLayout({
         <nav>
           <Logo />
         </nav>
-        <CurriculumContext>
-          <OffersContext>
-            {children}
-          </OffersContext>
-        </CurriculumContext>
+        <ModalContext>
+          <CurriculumContext>
+            <OffersContext>
+              {children}
+            </OffersContext>
+          </CurriculumContext>
+        </ModalContext>
       </body>
     </html>
   )

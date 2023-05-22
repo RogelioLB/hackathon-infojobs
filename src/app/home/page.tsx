@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation"
 import ListOffers from "../../../components/ListOffers/ListOffers"
 import ListSkills from "../../../components/ListSkills/ListSkills"
 import Loader from "../../../components/Loader/Loader"
+import Modal from "../../../components/Modal/Modal"
 import SearchBar from "../../../components/SearchBar/SearchBar"
 import useCurriculum from "../../../hooks/useCurriculum"
 import useToken from "../../../hooks/useToken"
@@ -21,6 +22,7 @@ export default function Home(){
                     <SearchBar />
                     <ListSkills />
                     <ListOffers />
+                    <Modal />
                 </div>
             }
         </>
