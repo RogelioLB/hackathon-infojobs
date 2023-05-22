@@ -7,10 +7,12 @@
 Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero intente pensar como alguien que en verdad necesita encontrar trabajo y no sabe que tan capacitado esta para la oferta. Entonces se me ocurrio la idea de talvez en base a tus habilidades y conocimientos que tengas en tu CV dentro de infojobs te evalue para saber si podrías encajar con la oferta de trabajo. Esta evaluación la realice con la API de Open AI.
 
 ## Roadmap 📆
-[*] Autenticación con OAuth2
-[*] Integración con OpeanAI
-[*] Evaluación de la oferta en base a conocimientos
-[*] Manejo de errores
+- [x] Autenticación con OAuth2
+- [x] Integración con OpeanAI
+- [x] Evaluación de la oferta en base a conocimientos
+- [x] Manejo de errores
+- [ ] Paginación
+- [ ] Mejorar UI
 
 ## Techstack 🚀
 Nextjs
