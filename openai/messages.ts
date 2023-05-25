@@ -28,7 +28,7 @@ export const defaultsMessage : ChatCompletionRequestMessage[] = [
     },
     {
         role:ChatCompletionRequestMessageRoleEnum.User,
-        content: "Oferta: ¿Que precisamos? · FP en Diseño Grafico, cursos Photoshop, diseño gráfico y visual y/o similares · Experiencia en puesto similar de un año. · Nivel avanzado de Photoshop · Valorable nivel avanzado de Ilustrator · Se valorará experiencia en sector textil · Disponibilidad para trabajar en turnos rotatorios (07h a 15h y de 14h a 22h) · Proactividad, iniciativa y capacidad de adaptabilidad. Habilidades: React alto, mongodb bajo, node medio, typescript alto, javascript alto"
+        content: "Titulo Oferta: Diseñador Grafico experimentado en Photoshop Oferta: ¿Que precisamos? · FP en Diseño Grafico, cursos Photoshop, diseño gráfico y visual y/o similares · Experiencia en puesto similar de un año. · Nivel avanzado de Photoshop · Valorable nivel avanzado de Ilustrator · Se valorará experiencia en sector textil · Disponibilidad para trabajar en turnos rotatorios (07h a 15h y de 14h a 22h) · Proactividad, iniciativa y capacidad de adaptabilidad. Habilidades: React alto, mongodb bajo, node medio, typescript alto, javascript alto"
     },
     {
         role: ChatCompletionRequestMessageRoleEnum.Assistant,

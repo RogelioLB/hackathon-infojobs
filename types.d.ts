@@ -77,5 +77,8 @@ export interface ModalContextValues{
 export interface OffersContextValues{
     offers:Offer[],
     loading:boolean,
-    getOffers?: (query: string) => Promise<void>
+    getOffers?: (page?: number) => Promise<void>,
+    currentPage:number,
+    totalPages:number,
+    setQuery?: Dispatch<SetStateAction<string>>
 }

@@ -1,9 +1,8 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { offersContext } from "../context/offersContext";
-import { Offer, OfferResponse } from "../types";
 
 export default function useOffers(){
-    const {offers,loading,getOffers} = useContext(offersContext)
+    const { offers, loading, getOffers, currentPage,totalPages,setQuery } = useContext(offersContext)
 
-    return {offers,loading,getOffers: getOffers as ((query: string) => Promise<void>)}
+    return { offers, loading, getOffers: getOffers as ((page?: number) => Promise<void>), currentPage, totalPages,setQuery}
 }

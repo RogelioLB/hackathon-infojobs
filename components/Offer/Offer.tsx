@@ -26,7 +26,7 @@ export default function Offer(props:Offer){
         setLoading(true)
         try{
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/evaluate`,{
-                body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills}),
+                body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills,offertTitle:props.title}),
                 method:'POST',
                 headers:{
                     "Content-Type":"application/json"

@@ -1,19 +1,18 @@
 .modal{
     position:fixed;
     left:50%;
-    top:100vh;
+    top:50%;
     background-color: white;
     border-radius: 8px;
     padding:20px;
     gap:20px;
     display: flex;
     flex-direction: column;
-    transform:translate(-50%,0);
+    transform:translate(-50%,-100vh);
     transition: transform .3s;
 }
 
 .modal_show{
-    top:50%;
     transform:translate(-50%,-50%);
 }
 

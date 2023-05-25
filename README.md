@@ -12,7 +12,7 @@ Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero int
 - [x] Evaluación de la oferta en base a conocimientos
 - [x] Manejo de errores
 - [x] Tipar componentes
-- [ ] Paginación
+- [x] Paginación
 - [ ] Mejorar UI
 
 ## Techstack 🚀

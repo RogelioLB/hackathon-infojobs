@@ -12,6 +12,7 @@ export default function useToken(code?:string | null){
             setLoading(true)
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/auth?code=${code}`)
             const data : AuthResponse = await res.json()
+            console.log(data)
             if(data.error) return router.replace("/")
             setToken(data.access_token)
             setLoading(false)

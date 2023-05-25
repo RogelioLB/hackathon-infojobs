@@ -1,11 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Lato } from 'next/font/google'
 import CurriculumContext from '../../context/curriculumContext'
 import Logo from '../../components/Logo/Logo'
 import OffersContext from '../../context/offersContext'
 import ModalContext from '../../context/modalContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const lato = Lato({ subsets: ['latin'] , weight:["400","700","900"]})
 
 export const metadata = {
   title: 'InfoJobs Offer Checker with CV',
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <nav>
           <Logo />
         </nav>
