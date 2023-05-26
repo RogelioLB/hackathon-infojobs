@@ -14,7 +14,7 @@ Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero int
 - [x] Tipar componentes
 - [x] Paginación
 - [ ] Filtros
-- [ ] Evaluación de la oferta en base a experiecía previa
+- [x] Evaluación de la oferta en base a experiecía previa
 - [ ] Evaluación de la oferta en base a estudios
 - [ ] Mejorar UI
 
