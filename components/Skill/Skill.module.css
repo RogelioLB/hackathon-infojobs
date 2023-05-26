@@ -1,17 +1,8 @@
 .skill{
     color:#fff;
-    padding:5px 10px;
-    border-radius: 15px;
-}
-
-.skill_green{
-    background-color: #04DA00;
-}
-
-.skill_yellow{
-    background-color: #D5DA00;
-}
-
-.skill_red{
-    background-color: #DA0D00;
+    background-color: #EA580C;
+    padding:10px 15px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: bold;
 }

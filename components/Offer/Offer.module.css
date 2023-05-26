@@ -2,119 +2,124 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .offer{
-    background-color: #EEE8E8;
+    background-color: #F1F5F9;
     width: 100%;
     display:flex;
-    border-radius: 8px;
+    border-radius: 4px;
     padding:14px;
+    flex-direction: column;
     gap:10px;
     box-shadow: 0 4px 5px rgba(0,0,0,.2);
 }
 
-.offer button{
-    padding:10px 15px;
-    background-color: #167DB7;
-    border-radius:8px;
-    font-size:16px;
-    text-decoration: none;
-    color:#fff;
+.header_offer{
     display:flex;
-    gap:10px;
-    align-items: center;
-    font-weight:500;
-    text-align: center;
-    justify-content: center;
-    cursor: pointer;
+    justify-content:space-between;
+    font-weight: bold;
+    font-size:12px;
+}
+
+.content_offer{
+    display: flex;
+    gap:20px;
+}
+
+.content_offer img{
+    border-radius: 6px;
+}
+
+
+.evaluate_offer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+}
+
+.evaluate_offer h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.evaluate_offer button{
+    background-color: #3B82F6;
+    color:white;
+    padding: 7px 0;
+    font-size: 16px;
     border:none;
+    cursor: pointer;
+    border-radius:5px;
 }
 
-.offer button:disabled{
-    background-color: #0e547c;
-    cursor: not-allowed;
+.evaluate_offer button:disabled{
+    background-color: #163f83;
+    cursor:not-allowed;
 }
 
-.offer_left{
-    flex-basis: 20%;
+.skills_offer{
     display: flex;
     flex-direction: column;
     gap:10px;
 }
 
-.offer_right{
-    flex:1;
+.skills_offer ul{
+    display: flex;
+    gap:15px;
+    flex-wrap: wrap;
+}
+
+.skills_offer h3{
+    font-size:16px;
+    font-weight: normal;
+}
+
+.evaluation{
+    padding:15px 30px;
+    width:80%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color:white;
     display: flex;
     flex-direction: column;
     gap:15px;
+    align-items: center;
 }
 
-.offer_right h3{
-    font-size: clamp(1.125rem, 0.5641rem + 1.7949vw, 2rem);
+.evaluation.green{
+    background-color: #22C55E;
 }
 
-.offer_right p{
+.evaluation.yellow{
+    background-color: #FB923C;
+}
+
+.evaluation.red{
+    background-color: #EF4444;
+}
+
+.evaluation a{
+    color:white;
+    text-decoration: none;
     font-size: 14px;
+    font-weight: bold;
 }
 
-.offer_square{
-    position: relative;
-    width:100%;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius: 8px;
+.evaluation_text{
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap:25px;
 }
 
-.offer_score{
-    color:#fff;
-    font-size: 20px;
-    font-weight: 700;
+.evaluation_text span{
+    font-size: 36px;
+    font-weight: bold;
 }
 
-.offer_score_green{
-    background-color: #04DA00;
-}
-
-.offer_score_yellow{
-    background-color: #D5DA00;
-}
-
-.offer_score_red{
-    background-color: #DA0D00;
-}
-
-.offer_square img{
-    object-fit: cover;
-    width: 100%;
-}
-
-@media screen and (max-width:578px) {
-    .offer{
+@media screen and (max-width:728px) {
+    .evaluation_text{
         flex-direction: column;
     }
-
-    .offer_left{
-        flex-direction: row;
-    }
-}
-
-.recomendation{
-    width:80%;
-    padding: 12px;
-    color:#fff;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.recomendation a{
-    color:white;
-    display: block;
-    text-align: center;
-    margin:10px;
-    font-weight: 900;
 }

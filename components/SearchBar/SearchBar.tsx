@@ -9,7 +9,7 @@ export default function SearchBar(){
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setOffers([])
-        await getOffers()
+        await getOffers(1)
     }
 
     return (

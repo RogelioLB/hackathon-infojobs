@@ -5,7 +5,7 @@ import { FetchError } from "../errors";
 import useModal from "../hooks/useModal";
 import { Offer, OfferResponse, OffersContextValues } from "../types";
 
-const defaultValue : OffersContextValues = { offers:[],loading:true, currentPage:1, totalPages:0 }
+const defaultValue : OffersContextValues = { offers:[], loading:true, currentPage:1, totalPages:0, query:"", totalResults:0 }
 
 export const offersContext = createContext(defaultValue)
 
@@ -14,6 +14,7 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
     const [loading,setLoading] = useState<boolean>(false)
     const [currentPage,setCurrentPage] = useState(1)
     const [totalPages,setTotalPages] = useState<number>(0)
+    const [totalResults,setTotalResults] = useState<number>(0)
     const [query,setQuery] = useState("")
     const { showModal } = useModal()
 
@@ -25,6 +26,7 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
             setOffers(offers => [...offers,...data.offers.filter(offer => offer.requirementMin.length>0)])
             setCurrentPage(data.currentPage)
             setTotalPages(data.totalPages)
+            setTotalResults(data.totalResults)
             setLoading(false)
         }catch{
             const err = new FetchError("Hubo un error inesperado en la peticion.")
@@ -34,7 +36,7 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
     }
 
     return(
-        <offersContext.Provider value={{ offers, loading, getOffers, currentPage, totalPages, setQuery, setOffers }}>
+        <offersContext.Provider value={{ totalResults, offers, loading, getOffers, currentPage, totalPages, setQuery, setOffers, query }}>
             {children}
         </offersContext.Provider>
     )

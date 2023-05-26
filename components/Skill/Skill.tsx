@@ -1,8 +1,8 @@
 import { Skill } from "../../types";
 import styles from "./Skill.module.css"
 
-export default function Skill({skill}:{skill:Skill}){
+export default function Skill({ skill, color }:{ skill:Skill, color?: string }){
     return (
-        <span className={`${styles.skill} ${skill.level === "alto" ? styles.skill_green : skill.level === "medio" ? styles.skill_yellow : styles.skill_red}`}>{skill.skill}</span>
+        <span className={styles.skill} style={{backgroundColor:color}}>{skill.skill}</span>
     )
 }

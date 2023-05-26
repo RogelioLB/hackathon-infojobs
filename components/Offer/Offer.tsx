@@ -7,7 +7,11 @@ import useModal from "../../hooks/useModal";
 import useOffers from "../../hooks/useOffers";
 import useSkills from "../../hooks/useSkills";
 import { CurriculumSkills, Offer } from "../../types";
+import ContentOffer from "./ContentOffer";
+import EvaluationOffer from "./EvaluationOffer";
+import HeaderOffer from "./HeaderOffer";
 import styles from './Offer.module.css'
+import SkillsOffer from "./SkillsOffer";
 
 export default function Offer(props:Offer){
     const [evaluation,setEvaluation] = useState<{score:number,message:string}>()
@@ -60,31 +64,11 @@ export default function Offer(props:Offer){
     return(
         <div className={styles.group}>
             <article className={styles.offer}>
-                <div className={styles.offer_left}>
-                    <div className={styles.offer_square}>
-                        <Image src={props.author.logoUrl} alt={props.author.name} fill />
-                    </div>
-                    {
-                        evaluation?.score && 
-                        <div className={`${styles.offer_square} ${styles.offer_score} ${evaluation.score >= 8 ? styles.offer_score_green : evaluation.score >= 6 ? styles.offer_score_yellow : styles.offer_score_red}`}>
-                            <span>{evaluation.score}</span>
-                        </div>
-                    }
-                </div>
-                <div className={styles.offer_right}>
-                    <h3>{props.title}</h3>
-                    <p>{props.requirementMin}</p>
-                    <button onClick={getScore} disabled={loading}>{loading ? "Cargando..." : "Evaluar"}</button>
-                </div>
+                <HeaderOffer city={props.city} publicationDate={props.published} />
+                <ContentOffer profile={props.author} onClick={getScore} title={props.title} loading={loading} />
+                <SkillsOffer skills={skillsAsked}/>
             </article>
-            {
-                evaluation 
-                && 
-                <div className={`${styles.recomendation} ${evaluation.score >= 8 ? styles.offer_score_green : evaluation.score >= 6 ? styles.offer_score_yellow : styles.offer_score_red}`}>
-                    <p>{evaluation.message}</p>
-                    <Link href={props.link} target="_blank">Ver oferta</Link>
-                </div>
-            }
+            { evaluation && <EvaluationOffer {...evaluation} url={props.link}  /> }
         </div>
     )
 }

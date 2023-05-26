@@ -7,7 +7,7 @@ export default function ListSkills(){
     const skills = useSkills()
     return (
         <div className={styles.list_skills}>
-            <h4>Tus habilidades: </h4>
+            <h4>Mis habilidades: </h4>
             <ul>
                 {skills && skills?.expertise?.map(skill=><Skill key={skill.skill} skill={skill}/>)}
             </ul>

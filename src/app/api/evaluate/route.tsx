@@ -23,6 +23,7 @@ export async function POST(req:Request){
                 }
             ]
         })
+       
         const data = completetion.data.choices[0].message?.content ?? ''
         try{
             const json = JSON.parse(data.trim())

@@ -5,16 +5,17 @@ import Offer from "../Offer/Offer"
 import styles from "./ListOffers.module.css"
 
 export default function ListOffers(){
-    const {offers,loading,currentPage,getOffers,totalPages} = useOffers()
+    const { offers, loading, currentPage, getOffers, totalPages, query, totalResults } = useOffers()
 
     return (
         <>
             {
                 loading && !(offers.length>0) ? <Loader /> : 
-                offers.length > 0 && 
+                offers.length > 0 &&
                     <InfiniteScroll className={styles.list_offers} dataLength={offers.length} next={async()=>await getOffers(currentPage+1)} hasMore={currentPage<totalPages} loader={<Loader />}>
+                        <h4>Hay {totalResults} resultados {query && `para ${query}`}</h4>
                         {offers.map(offer=><Offer key={offer.id} {...offer} />)}
-                    </InfiniteScroll> 
+                    </InfiniteScroll>
             }
         </>
     )

@@ -96,13 +96,15 @@ export interface ModalContextValues{
 }
 
 export interface OffersContextValues{
+    totalResults:number,
     offers:Offer[],
     loading:boolean,
     getOffers?: (page?: number) => Promise<void>,
     currentPage:number,
     totalPages:number,
     setQuery?: Dispatch<SetStateAction<string>>
-    setOffers?: Dispatch<SetStateAction<Offer[]>>
+    setOffers?: Dispatch<SetStateAction<Offer[]>>,
+    query:string
 }
 
 interface PD{

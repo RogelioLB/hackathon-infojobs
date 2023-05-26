@@ -12,11 +12,10 @@ Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero int
 - [x] Evaluación de la oferta en base a conocimientos
 - [x] Manejo de errores
 - [x] Tipar componentes
-- [x] Paginación
+- [x] Infinite Scroll
 - [ ] Filtros
 - [x] Evaluación de la oferta en base a experiecía previa
-- [ ] Evaluación de la oferta en base a estudios
-- [ ] Mejorar UI
+- [x] Mejorar UI
 
 ## Techstack 🚀
 Nextjs
