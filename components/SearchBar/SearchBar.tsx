@@ -4,10 +4,11 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import useOffers from "../../hooks/useOffers"
 
 export default function SearchBar(){
-    const {getOffers,setQuery} = useOffers()
+    const {getOffers,setQuery,setOffers} = useOffers()
 
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setOffers([])
         await getOffers()
     }
 

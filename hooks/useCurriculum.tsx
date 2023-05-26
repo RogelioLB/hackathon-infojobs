@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { curriculumContext } from "../context/curriculumContext";
 
 export default function useCurriculum(token:string){
-    const {getCurriculum,curriculum,getSkills} = useContext(curriculumContext)
+    const {getCurriculum,curriculum,getSkills,getExperience} = useContext(curriculumContext)
 
     useEffect(()=>{
         if(getCurriculum) getCurriculum(token)
@@ -10,7 +10,8 @@ export default function useCurriculum(token:string){
 
     useEffect(()=>{
         if(curriculum && getSkills) getSkills(curriculum,token)
-    },[curriculum,getSkills,token])
+        if(curriculum && getExperience) getExperience(curriculum,token)
+    },[curriculum,getSkills,getExperience,token])
 
     return {curriculum}
 }

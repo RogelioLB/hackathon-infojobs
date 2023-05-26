@@ -11,11 +11,17 @@ const openai = new OpenAIApi(configuration)
 
 export async function POST(req:Request){
     const body = await req.json()
-    const {requirementsMin,skills,offerTitle} = body;
+    const { requirementsMin, skills, offerTitle, skillsAsked, experience} = body;
+
     try{
         const completetion = await openai.createChatCompletion({
             model:"gpt-3.5-turbo",
-            messages:[...defaultsMessage,{role:ChatCompletionRequestMessageRoleEnum.User,content:`Titulo Oferta: ${offerTitle} Oferta de trabajo: ${requirementsMin}. Habilidades: ${skills}`}]
+            messages:[...defaultsMessage,
+                {
+                    role:ChatCompletionRequestMessageRoleEnum.User,
+                    content:`Titulo de la oferta: ${offerTitle} \n Requerimientos minimos: ${requirementsMin}. \n Habilidades pedidas: ${skillsAsked} \n Mi cv: ${experience} manejo ${skills}`
+                }
+            ]
         })
         const data = completetion.data.choices[0].message?.content ?? ''
         try{

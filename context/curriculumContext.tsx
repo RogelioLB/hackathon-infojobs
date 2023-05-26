@@ -1,7 +1,6 @@
-
 "use client"
 import { createContext, ReactNode, useCallback, useState } from "react";
-import { Curriculum, CurriculumContextValues, CurriculumSkills } from "../types";
+import { Curriculum, CurriculumContextValues, CurriculumSkills, ExperienceResponse } from "../types";
 
 const defaultCurriculum = {
     id:"",
@@ -14,6 +13,7 @@ const defaultCurriculum = {
 
 const defaultValue : CurriculumContextValues = {
     curriculum:defaultCurriculum,
+    expertise:""
 }
 
 export const curriculumContext = createContext<CurriculumContextValues>(defaultValue)
@@ -21,6 +21,7 @@ export const curriculumContext = createContext<CurriculumContextValues>(defaultV
 const CurriculumContext = ({children}:{children:ReactNode}) =>{
     const [curriculum,setCurriculum] = useState(defaultCurriculum)
     const [skills,setSkills] = useState<CurriculumSkills>()
+    const [expertise,setExpertise] = useState<string>("")
 
     const getCurriculum = useCallback(async (token:string) =>{
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/curriculum`,{
@@ -42,8 +43,23 @@ const CurriculumContext = ({children}:{children:ReactNode}) =>{
         setSkills(data)
     },[])
 
+    const getExperience = useCallback(async (curriculum:Curriculum,token:string) =>{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/curriculum/${curriculum.code}/experience`,{
+            headers:{
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        const data : ExperienceResponse= await res.json()
+        if(!data.experience) return
+        const exp = data.experience.map((exp)=>{
+            const yearsWorked = new Date().getFullYear() - new Date(exp.startingDate).getFullYear() 
+            return `Trabaje en ${exp.company} como ${exp.job} usando ${exp.expertise.map(sk=>`${sk.skill}`).join(",")} durante ${yearsWorked} años.`
+        }).join(".")
+        setExpertise(exp)
+    },[])
+
     return(
-        <curriculumContext.Provider value={{curriculum,getCurriculum,skills,getSkills}}>
+        <curriculumContext.Provider value={{curriculum,getCurriculum,skills,getSkills,getExperience,expertise}}>
             {children}
         </curriculumContext.Provider>
     )

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 export interface ErrorAuthResponse{
     error: string,
     error_description:string,
@@ -9,6 +11,18 @@ export interface AuthResponse extends ErrorAuthResponse{
     expires_in:number,
     refresh_token:string,
     token_type:string
+}
+
+export interface ExperienceResponse {
+    experience:Experience[]
+}
+
+export interface Experience{
+    id:string,
+    company:string,
+    job:string,
+    startingDate:string,
+    expertise: Skill[]
 }
 
 export interface Curriculum{
@@ -52,7 +66,12 @@ export interface Offer{
     description:string,
     link:string,
     author: Profile,
-    requirementMin:string
+    requirementMin:string,
+    city:string,
+    published:string,
+    salaryDescription:string,
+    teleworking: PD,
+    skillsList:Skill[]
 }
 
 export interface Profile{
@@ -65,7 +84,9 @@ export interface CurriculumContextValues{
     curriculum:Curriculum,
     getCurriculum?:(token: string) => Promise<void>,
     skills?:CurriculumSkills,
-    getSkills?:(curriculum: Curriculum, token: string) => Promise<void>
+    expertise:string,
+    getSkills?:(curriculum: Curriculum, token: string) => Promise<void>,
+    getExperience?: (curriculum: Curriculum, token: string) => Promise<void>
 }
 
 export interface ModalContextValues{ 
@@ -81,4 +102,10 @@ export interface OffersContextValues{
     currentPage:number,
     totalPages:number,
     setQuery?: Dispatch<SetStateAction<string>>
+    setOffers?: Dispatch<SetStateAction<Offer[]>>
+}
+
+interface PD{
+    id:string,
+    value:string
 }

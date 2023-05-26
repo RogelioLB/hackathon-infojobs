@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { EvaluationError } from "../../errors";
+import useExperience from "../../hooks/useExperience";
 import useModal from "../../hooks/useModal";
+import useOffers from "../../hooks/useOffers";
 import useSkills from "../../hooks/useSkills";
 import { CurriculumSkills, Offer } from "../../types";
 import styles from './Offer.module.css'
@@ -11,6 +13,8 @@ export default function Offer(props:Offer){
     const [evaluation,setEvaluation] = useState<{score:number,message:string}>()
     const [loading,setLoading] = useState(false)
     const skills = useSkills()
+    const {skillsAsked} = useOffers(props.id)
+    const expertise = useExperience()
     const {showModal} = useModal()
 
     const generateSkills = (skills:CurriculumSkills) => {
@@ -20,13 +24,23 @@ export default function Offer(props:Offer){
         }).join(', ')
         return exp
     }
-    const parseSkills = generateSkills(skills as CurriculumSkills)
+    const parsedSkills = generateSkills(skills as CurriculumSkills)
 
     const getScore = async () =>{
         setLoading(true)
+        const parseSkillsAsked = skillsAsked?.map(sk=>{
+            return `${sk.skill}`
+        }).join(",")
         try{
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/evaluate`,{
-                body:JSON.stringify({requirementsMin:props.requirementMin, skills: parseSkills,offertTitle:props.title}),
+                body:JSON.stringify(
+                    {
+                        requirementsMin:props.requirementMin, 
+                        skills: parsedSkills,
+                        offerTitle:props.title,
+                        skillsAsked:parseSkillsAsked,
+                        experience:expertise
+                    }),
                 method:'POST',
                 headers:{
                     "Content-Type":"application/json"

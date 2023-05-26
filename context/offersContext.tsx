@@ -15,7 +15,7 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
     const [currentPage,setCurrentPage] = useState(1)
     const [totalPages,setTotalPages] = useState<number>(0)
     const [query,setQuery] = useState("")
-    const {showModal} = useModal()
+    const { showModal } = useModal()
 
     const getOffers = async (page:number = currentPage) =>{
         setLoading(true)
@@ -34,7 +34,7 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
     }
 
     return(
-        <offersContext.Provider value={{ offers, loading, getOffers, currentPage, totalPages, setQuery }}>
+        <offersContext.Provider value={{ offers, loading, getOffers, currentPage, totalPages, setQuery, setOffers }}>
             {children}
         </offersContext.Provider>
     )
