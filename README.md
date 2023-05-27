@@ -13,7 +13,7 @@ Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero int
 - [x] Manejo de errores
 - [x] Tipar componentes
 - [x] Infinite Scroll
-- [ ] Filtros
+- [x] Filtros
 - [x] Evaluación de la oferta en base a experiecía previa
 - [x] Mejorar UI
 
