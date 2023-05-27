@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { offersContext } from "../context/offersContext";
-import { Offer, Skill } from "../types";
+import { Offer, SkillInfo } from "../types";
 
 export default function useOffers(id?:string){
     const { offers, loading, getOffers, currentPage, totalPages, setQuery, setOffers, query, totalResults } = useContext(offersContext)
-    const [skillsAsked,setSkillsAsked] = useState<Skill[]>()
+    const [skillsAsked,setSkillsAsked] = useState<SkillInfo[]>()
 
     useEffect(()=>{
         if(!id) return
@@ -22,7 +22,7 @@ export default function useOffers(id?:string){
     return { 
         offers,
         loading, 
-        getOffers: getOffers as ((page?: number) => Promise<void>), 
+        getOffers: getOffers as ((page?: number, teleworkin?:string) => Promise<void>), 
         currentPage, 
         totalPages,
         setQuery: setQuery as Dispatch<SetStateAction<string>>, 

@@ -9,7 +9,7 @@
     box-shadow:0 3px 5px rgba(0,0,0,.25);
 }
 
-.search_bar input{
+.search_bar input, .input_tag input{
     flex:1;
     border-radius:15px;
     border:none;
@@ -19,7 +19,7 @@
     height: 43px;
 }
 
-.search_bar input:focus{
+.search_bar input:focus, .input_tag input:focus{
     outline: 1px solid #167DB7;
 }
 
@@ -35,4 +35,23 @@
     justify-content: center;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.input_tag{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap:15px;
+}
+
+.input_tag input{
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.tags{
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
 }

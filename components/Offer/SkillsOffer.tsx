@@ -9,7 +9,7 @@ export default function SkillsOffer({ skills } : { skills?: Skill[] }){
             <h3>Habilidades especificas: </h3>
             <ul>
                 {
-                    skills && skills.map(sk=><SkillFC skill={sk} color="#475569" key={sk.skill}/>)
+                    skills && skills.length > 0 ? skills.map(sk=><SkillFC skill={sk} color="#475569" key={sk.skill}/>) : <span>No hay habilidades.</span>
                 }
             </ul>
         </div>

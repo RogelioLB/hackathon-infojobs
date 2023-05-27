@@ -48,6 +48,7 @@
     background-color: #3B82F6;
     color:white;
     padding: 7px 0;
+    font-weight: 500;
     font-size: 16px;
     border:none;
     cursor: pointer;
@@ -71,6 +72,11 @@
     flex-wrap: wrap;
 }
 
+.skills_offer ul span{
+    padding:5px 8px;
+    font-size: 14px;
+}
+
 .skills_offer h3{
     font-size:16px;
     font-weight: normal;
@@ -86,6 +92,7 @@
     flex-direction: column;
     gap:15px;
     align-items: center;
+    box-shadow: 0 4px 5px rgba(0,0,0,.2);
 }
 
 .evaluation.green{

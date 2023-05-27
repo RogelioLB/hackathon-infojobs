@@ -35,11 +35,11 @@ export interface Curriculum{
 }
 
 export interface CurriculumSkills{
-    expertise: Skill[],
+    expertise: SkillInfo[],
     language: Language[]
 }
 
-export interface Skill{
+export interface SkillInfo{
     skill:string,
     level:"alto" | "medio" | "bajo"
 }
@@ -71,7 +71,8 @@ export interface Offer{
     published:string,
     salaryDescription:string,
     teleworking: PD,
-    skillsList:Skill[]
+    skillsList:Skill[],
+    country:string
 }
 
 export interface Profile{
@@ -99,7 +100,7 @@ export interface OffersContextValues{
     totalResults:number,
     offers:Offer[],
     loading:boolean,
-    getOffers?: (page?: number) => Promise<void>,
+    getOffers?: (page?: number,teleworkin?:string) => Promise<void>,
     currentPage:number,
     totalPages:number,
     setQuery?: Dispatch<SetStateAction<string>>
@@ -110,4 +111,9 @@ export interface OffersContextValues{
 interface PD{
     id:string,
     value:string
+}
+
+export interface TagInfo{
+    id:string,
+    text:string
 }

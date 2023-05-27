@@ -18,10 +18,10 @@ const OffersContext = ({ children } : { children:ReactNode }) =>{
     const [query,setQuery] = useState("")
     const { showModal } = useModal()
 
-    const getOffers = async (page:number = currentPage) =>{
+    const getOffers = async (page:number = currentPage,teleworking?:string) =>{
         setLoading(true)
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/offer?q=${query}&page=${page}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/offer?q=${query}&page=${page}${teleworking && teleworking}`)
             const data : OfferResponse = await res.json()
             setOffers(offers => [...offers,...data.offers.filter(offer => offer.requirementMin.length>0)])
             setCurrentPage(data.currentPage)
