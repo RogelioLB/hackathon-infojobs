@@ -17,7 +17,7 @@ export default function ListOffers(){
     return (
         <>
             {
-                loading && !(offers.length>=0) ? <Loader /> : 
+                loading && offers.length<=0 ? <Loader /> : 
                 offers.length > 0 &&
                     <InfiniteScroll className={styles.list_offers} dataLength={offers.length} next={handleNext} hasMore={currentPage<totalPages} loader={<Loader />}>
                         <h4>Hay {totalResults} resultados {query && `para ${query}`}</h4>
