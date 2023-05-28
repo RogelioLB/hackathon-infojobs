@@ -1,5 +1,5 @@
 "use client"
-import { createContext, MouseEvent, MouseEventHandler, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { ModalContextValues } from "../types";
 
 const DEFAULT_VALUE : ModalContextValues = {
@@ -12,8 +12,8 @@ const DEFAULT_VALUE : ModalContextValues = {
 export const modalContext = createContext(DEFAULT_VALUE)
 
 export default function ModalContext({ children }:{ children:ReactNode }){
-    const [showModal,setShowModal] = useState(false)
-    const [text,setText] = useState("")
+    const [showModal,setShowModal] = useState(DEFAULT_VALUE.show)
+    const [text,setText] = useState(DEFAULT_VALUE.textModal)
 
     const handleShowModal = (text:string) =>{
         setText(text)

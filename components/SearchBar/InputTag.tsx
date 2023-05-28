@@ -9,7 +9,9 @@ export default function InputTag({ selected, onSelect, suggestions, onDelete } :
     
     useEffect(()=>{
         const uns = suggestions.map((sgg)=>{
-            if(selected.findIndex(sl=>sl.id===sgg.id)) return sgg
+            if(selected.length<=0) return sgg
+            if(selected.filter(sl=>sl.id===sgg.id).length<=0) return sgg
+            return undefined
         }).filter(uns=>uns!==undefined) as TagInfo[]
         setUnselected(uns)
     },[suggestions,selected])

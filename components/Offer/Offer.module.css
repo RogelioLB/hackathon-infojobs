@@ -95,6 +95,14 @@
     box-shadow: 0 4px 5px rgba(0,0,0,.2);
 }
 
+.evaluation_score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
 .evaluation.green{
     background-color: #22C55E;
 }
@@ -123,6 +131,18 @@
 .evaluation_text span{
     font-size: 36px;
     font-weight: bold;
+}
+
+.percentage{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.percentage span{
+    font-size:22px;
 }
 
 @media screen and (max-width:728px) {

@@ -11,12 +11,12 @@ const defaultCurriculum = {
     principal:false
 }
 
-const defaultValue : CurriculumContextValues = {
+const DEFAULT_VALUE : CurriculumContextValues = {
     curriculum:defaultCurriculum,
     expertise:""
 }
 
-export const curriculumContext = createContext<CurriculumContextValues>(defaultValue)
+export const curriculumContext = createContext<CurriculumContextValues>(DEFAULT_VALUE)
 
 const CurriculumContext = ({children}:{children:ReactNode}) =>{
     const [curriculum,setCurriculum] = useState(defaultCurriculum)

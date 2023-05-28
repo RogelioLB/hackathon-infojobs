@@ -1,9 +1,10 @@
 import './globals.css'
-import { Inter, Lato } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import CurriculumContext from '../../context/curriculumContext'
 import Logo from '../../components/Logo/Logo'
 import OffersContext from '../../context/offersContext'
 import ModalContext from '../../context/modalContext'
+import TagsContext from '../../context/tagsContext'
 
 const lato = Inter({ subsets: ['latin'] , weight:["400","700","900"]})
 
@@ -25,9 +26,11 @@ export default function RootLayout({
         </nav>
         <ModalContext>
           <CurriculumContext>
-            <OffersContext>
-              {children}
-            </OffersContext>
+            <TagsContext>
+              <OffersContext>
+                {children}
+              </OffersContext>
+            </TagsContext>
           </CurriculumContext>
         </ModalContext>
       </body>

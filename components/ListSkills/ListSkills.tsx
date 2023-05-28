@@ -1,5 +1,4 @@
 import useSkills from "../../hooks/useSkills";
-import { CurriculumSkills } from "../../types";
 import Skill from "../Skill/Skill";
 import styles from "./ListSkills.module.css"
 

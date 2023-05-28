@@ -3,19 +3,26 @@
 import { createContext, ReactNode, useState } from "react";
 import { FetchError } from "../errors";
 import useModal from "../hooks/useModal";
-import { Offer, OfferResponse, OffersContextValues } from "../types";
+import { OfferResponse, OffersContextValues } from "../types";
 
-const defaultValue : OffersContextValues = { offers:[], loading:true, currentPage:1, totalPages:0, query:"", totalResults:0 }
+const DEFAULT_VALUES : OffersContextValues = { 
+    offers:[], 
+    loading:true, 
+    currentPage:1, 
+    totalPages:0, 
+    query:"", 
+    totalResults:0 
+}
 
-export const offersContext = createContext(defaultValue)
+export const offersContext = createContext(DEFAULT_VALUES)
 
 const OffersContext = ({ children } : { children:ReactNode }) =>{
-    const [offers,setOffers] = useState<Offer[]>([])
-    const [loading,setLoading] = useState<boolean>(false)
-    const [currentPage,setCurrentPage] = useState(1)
-    const [totalPages,setTotalPages] = useState<number>(0)
-    const [totalResults,setTotalResults] = useState<number>(0)
-    const [query,setQuery] = useState("")
+    const [offers,setOffers] = useState(DEFAULT_VALUES.offers)
+    const [loading,setLoading] = useState(DEFAULT_VALUES.loading)
+    const [currentPage,setCurrentPage] = useState(DEFAULT_VALUES.currentPage)
+    const [totalPages,setTotalPages] = useState(DEFAULT_VALUES.totalPages)
+    const [totalResults,setTotalResults] = useState(DEFAULT_VALUES.totalResults)
+    const [query,setQuery] = useState(DEFAULT_VALUES.query)
     const { showModal } = useModal()
 
     const getOffers = async (page:number = currentPage,teleworking?:string) =>{

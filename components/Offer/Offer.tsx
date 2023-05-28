@@ -1,12 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { EvaluationError } from "../../errors";
 import useExperience from "../../hooks/useExperience";
 import useModal from "../../hooks/useModal";
 import useOffers from "../../hooks/useOffers";
 import useSkills from "../../hooks/useSkills";
-import { CurriculumSkills, Offer } from "../../types";
+import { CurriculumSkills, EvaluationResponse, Offer } from "../../types";
 import ContentOffer from "./ContentOffer";
 import EvaluationOffer from "./EvaluationOffer";
 import HeaderOffer from "./HeaderOffer";
@@ -14,7 +12,7 @@ import styles from './Offer.module.css'
 import SkillsOffer from "./SkillsOffer";
 
 export default function Offer(props:Offer){
-    const [evaluation,setEvaluation] = useState<{score:number,message:string}>()
+    const [evaluation,setEvaluation] = useState<{score:number,message:string, percentage:string}>()
     const [loading,setLoading] = useState(false)
     const skills = useSkills()
     const {skillsAsked} = useOffers(props.id)
@@ -51,7 +49,7 @@ export default function Offer(props:Offer){
                 }
             })
             if(res.status===500) throw new EvaluationError(await res.text())
-            const data : { score:number,message:string } = await res.json()
+            const data : EvaluationResponse = await res.json()
             setEvaluation(data)
             setLoading(false)
         }catch(err){

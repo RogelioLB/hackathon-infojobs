@@ -108,6 +108,13 @@ export interface OffersContextValues{
     query:string
 }
 
+export interface TagsContextValues{
+    tags: TagInfo[],
+    teleworking: TagInfo[],
+    handleSelect?: (text:string) => void,
+    handleDelete?: (id:string) => void
+}
+
 interface PD{
     id:string,
     value:string
@@ -116,4 +123,14 @@ interface PD{
 export interface TagInfo{
     id:string,
     text:string
+}
+
+export interface EvaluationComponentProps extends EvaluationResponse {
+    url: string
+}
+
+export interface EvaluationResponse{
+    score:number,
+    message:string,
+    percentage:string
 }
