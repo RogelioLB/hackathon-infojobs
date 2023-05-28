@@ -7,7 +7,7 @@ import { OfferResponse, OffersContextValues } from "../types";
 
 const DEFAULT_VALUES : OffersContextValues = { 
     offers:[], 
-    loading:true, 
+    loading:false, 
     currentPage:1, 
     totalPages:0, 
     query:"", 
