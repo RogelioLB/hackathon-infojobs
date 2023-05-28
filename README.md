@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/-Demo-lightgreen?style=for-the-badge&theme=dark)](https://hackathon-infojobs.vercel.app/)
 
 ## Idea 💡
-Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero intente pensar como alguien que en verdad necesita encontrar trabajo y no sabe que tan capacitado esta para la oferta. Entonces se me ocurrio la idea de talvez en base a tus habilidades y conocimientos que tengas en tu CV dentro de infojobs te evalue para saber si podrías encajar con la oferta de trabajo. Esta evaluación la realice con la API de Open AI.
+Nunca eh utilizado alguna plataforma como este tipo para buscar empleo, pero intente pensar como alguien que en verdad necesita encontrar trabajo y no sabe que tan capacitado esta para la oferta. Entonces se me ocurrio la idea de talvez en base a tus habilidades y conocimientos que tengas en tu CV dentro de infojobs te evalue para saber si podrías encajar con la oferta de trabajo ademas otorgando un porcentaje sobre que tan probable sería que te escogieran sobre todos los participantes. Esta evaluación la realice con la API de Open AI.
 
 ## Roadmap 📆
 - [x] Autenticación con OAuth2
@@ -25,7 +25,7 @@ Typescript
 Infojobs
 OpenAI
 
-## Install ⚙️
+## Instalación ⚙️
 - Clona el repositorio.
 ```
 git clone https://github.com/KleyberJMH/infojobs-hackaton
@@ -48,3 +48,25 @@ NEXT_PUBLIC_API_BASE = "http://localhost:3000/"
 ```
 npm run dev
 ```
+
+
+
+## Como usar
+
+Al iniciar te aparecera un boton donde poder autentificarte con InfoJobs para luego redirigirte a la pagina principal.
+
+![auth](images/auth.png)
+
+Al entrar a la pagina principal encontraras lo siguiente:
+
+![home](images/home.png)
+
+Con la posibilidad de realizar busquedas mediante una query y con los filtros si el trabajo es presencial o hibrido etc.
+
+![img1](images/img1.png)
+
+![img2](images/img2.png)
+
+Al realizar una busqueda apareceran todas las ofertas relacionadas a la busqueda con la posibilidad de evaluarte en base a la oferta de trabajo.
+
+![evaluacion](images/evaluacion.png)
