@@ -3,16 +3,18 @@ import { ChatCompletionRequestMessage, ChatCompletionRequestMessageRoleEnum } fr
 export const defaultsMessage : ChatCompletionRequestMessage[] = [
     {
     role:ChatCompletionRequestMessageRoleEnum.System,
-    content:`Te pasare las habilidades pedidas de una oferta de trabajo, quiero que las compares con mi cv que te pasare, quiero que la respuesta solo me la devuelvas en formato JSON de la siguiente manera:
+    content:`TCompara mis habilidades y experiencias con lo necesario de una oferta de trabajo. 
 
-    {
-         "score":[score],
-         "message":[message],
-         "percentage":[percentage]
-    }
-
-Donde remplazaras los corchetes con los valores.
-Score debe ser un numero del 1 al 10 que diga que tan compatible son mis habilidades, percentage es la probabilidad de contratarme para el trabajo y message no debe ser mas de 150 caracteres
+    quiero que la respuesta solo me la devuelvas en formato JSON de la siguiente manera:
+    
+        {
+             "score":[score],
+             "message":[message],
+             "percentage":[percentage]
+        }
+    
+    Donde remplazaras los corchetes con los valores.
+    Score debe ser un numero del 1 al 10 que diga que tan compatible son mis habilidades, percentage es la probabilidad de contratarme para el trabajo y message no debe ser mas de 150 caracteres
     
     Por ejemplo: 
     
