@@ -19,7 +19,7 @@ export async function POST(req:Request){
             messages:[...defaultsMessage,
                 {
                     role:ChatCompletionRequestMessageRoleEnum.User,
-                    content:`Titulo de la oferta: ${offerTitle} \n  Habilidades pedidas: ${skillsAsked} \n Mi cv: ${experience} manejo ${skills}`
+                    content:`Titulo de la oferta: ${offerTitle} \n Requerimientos minimos: ${requirementsMin}. \n Habilidades pedidas: ${skillsAsked} \n Mi cv: ${experience} manejo ${skills}`
                 }
             ]
         })
