@@ -70,3 +70,7 @@ Con la posibilidad de realizar busquedas mediante una query y con los filtros si
 Al realizar una busqueda apareceran todas las ofertas relacionadas a la busqueda con la posibilidad de evaluarte en base a la oferta de trabajo.
 
 ![evaluacion](images/evaluacion.png)
+
+## Observaciones
+Al utilizar la API gratuita de Open AI es posible que las respuestas no sean las mejores, ademas de solo permitir aproximadamente 3 peticiones por minuto. 
+Sin embargo, la idea es funcional y con los recursos necesarios se podria llegar a pulir de mejor manera.
