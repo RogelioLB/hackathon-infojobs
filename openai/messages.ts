@@ -3,7 +3,7 @@ import { ChatCompletionRequestMessage, ChatCompletionRequestMessageRoleEnum } fr
 export const defaultsMessage : ChatCompletionRequestMessage[] = [
     {
     role:ChatCompletionRequestMessageRoleEnum.System,
-    content:`Te pasare los requerimientos minimos y habilidades pedidas de una oferta de trabajo, quiero que las compares con mi cv que te pasare, quiero que la respuesta solo me la devuelvas en formato JSON de la siguiente manera:
+    content:`Te pasare las habilidades pedidas de una oferta de trabajo, quiero que las compares con mi cv que te pasare, quiero que la respuesta solo me la devuelvas en formato JSON de la siguiente manera:
 
     {
          "score":[score],
